@@ -1,0 +1,30 @@
+import math as math
+def circle(x1,y1,x2,y2,x3,y3):
+    #general equation: x**2 + y**2 + D*x + E*y + F =0
+    #where x and y are x1x2x3 and y1y2y3
+    #for x1 and y1
+#    eq1= x1**2 + y1**2 + D*x1 + E*y1 + F
+#    eq2= x2**2 + y2**2 + D*x2 + E*y2 + F
+#    eq3= x3**2 + y3**2 + D*x3 + E*y3 + F
+    
+    #cramers rule 3 unknown
+    j=-1*(x1**2+y1**2)
+    p=-1*(x2**2+y2**2)
+    l=-1*(x3**2+y3**2)
+    
+    #a=x1; d=x2; g=x3; b=y1; e=y2; h=y3; cfi == 1; jkl = -1*(x**2+y**2)
+    dn = (x1*y2*1)+(y2*1*x3)+(1*x2*y3) - (x3*y2*1)-(y3*1*x1)-(1*x2*y1)
+    D = ((j*y2*1)+(y1*1*l)+(1*p*y3) - (l*y2*1)-(y3*1*j)-(1*p*y1))//dn
+    E = ((x1*p*1)+(j*1*x3)+(1*x2*l) - (x3*p*1)-(l*1*x1)-(1*x2*j))//dn
+    F = ((x1*y2*l)+(y1*p*x3)+(j*x2*y3) - (x3*y2*j)-(y3*p*x1)-(l*x2*y1))//dn
+    
+    #----radius----
+    r=math.sqrt((-F+(D**2+E**2)))
+    
+    #----center---
+    h=-E
+    k=-D
+    
+    print("Center: ", h,',',k)
+    print('Radius: ', round(r))
+    print('D,E,F: ', D,",",E,',',F)
