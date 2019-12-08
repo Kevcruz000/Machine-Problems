@@ -1,0 +1,43 @@
+import numpy as np
+
+x = np.linspace(1,45,10)
+y = np.linspace(45,128,10)
+
+
+P1 = np.polyfit(x,y,1);
+P2 = np.polyfit(x,y,2);
+P3 = np.polyfit(x,y,3);
+P4 = np.polyfit(x,y,4);
+P5 = np.polyfit(x,y,5);
+P6 = np.polyfit(x,y,6);
+P7 = np.polyfit(x,y,7);
+P8 = np.polyfit(x,y,8);
+P9 = np.polyfit(x,y,9);
+P10 = np.polyfit(x,y,10);
+
+Y1 = np.polyval(P1,x);
+Y2 = np.polyval(P2,x);
+Y3 = np.polyval(P3,x);
+Y4 = np.polyval(P4,x);
+Y5 = np.polyval(P5,x);
+Y6 = np.polyval(P6,x);
+Y7 = np.polyval(P7,x);
+Y8 = np.polyval(P8,x);
+Y9 = np.polyval(P9,x);
+Y10 = np.polyval(P10,x);
+
+e1 = np.linalg.norm(y-Y1)
+e2 = np.linalg.norm(y-Y2)
+e3 = np.linalg.norm(y-Y3)
+e4 = np.linalg.norm(y-Y4)
+e5 = np.linalg.norm(y-Y5)
+e6 = np.linalg.norm(y-Y6)
+e7 = np.linalg.norm(y-Y7)
+e8 = np.linalg.norm(y-Y8)
+e9 = np.linalg.norm(y-Y9)
+e10 = np.linalg.norm(y-Y10)
+
+lnorm = [e1,e2,e3,e4,e5,e6,e7,e8,e9,e10]
+
+#the best approximation is with the least norm of
+print(min(lnorm))
