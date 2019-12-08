@@ -1,0 +1,38 @@
+Xi=1:1:9;
+Yi=[174,41,4,0,-7,-29,-52,-41,60];
+
+P1 = polyfit(Xi,Yi,1);
+P2 = polyfit(Xi,Yi,2);
+P3 = polyfit(Xi,Yi,3);
+P4 = polyfit(Xi,Yi,4);
+P5 = polyfit(Xi,Yi,5);
+P6 = polyfit(Xi,Yi,6);
+P7 = polyfit(Xi,Yi,7);
+P8 = polyfit(Xi,Yi,8);
+P9 = polyfit(Xi,Yi,9);
+P10 = polyfit(Xi,Yi,10);
+
+Y1 = polyval(P1,Xi);
+Y2 = polyval(P2,Xi);
+Y3 = polyval(P3,Xi);
+Y4 = polyval(P4,Xi);
+Y5 = polyval(P5,Xi);
+Y6 = polyval(P6,Xi);
+Y7 = polyval(P7,Xi);
+Y8 = polyval(P8,Xi);
+Y9 = polyval(P9,Xi);
+Y10 = polyval(P10,Xi);
+
+e1 = norm(Yi-Y1);
+e2 = norm(Yi-Y2);
+e3 = norm(Yi-Y3);
+e4 = norm(Yi-Y4);
+e5 = norm(Yi-Y5);
+e6 = norm(Yi-Y6);
+e7 = norm(Yi-Y7);
+e8 = norm(Yi-Y8);
+e9 = norm(Yi-Y9);
+e10 = norm(Yi-Y10);
+
+
+bestApprox = min([e1 e2 e3 e4 e5 e6 e7 e8 e9 e10])
