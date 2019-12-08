@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+import math as math
+n=list(range(0,199)) #n
+for i in n:
+    x = math.sin(((3*math.pi)/100)*n) #x(n)
+    if n == 0:
+        y = -1.5*x*(n) + 2*x*(n+1) - 0.5*x*(n+2) #y(n)
+    elif 0 < n and n < 198:
+        y = 0.5*x*(n+1) - 0.5*x*(n-1)#y(n)
+    elif n == 199:
+        y = 1.5*x*(n) - 2*x*(n-1) + 0.5*x*(n-2)#y(n)
+#yung x(n) yung x axis 
+    plt.plot(x,color='r')
+    plt.plot(y,color='k')
+    plt.xlabel('x')
+    plt.ylabel('y')
