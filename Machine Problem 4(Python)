@@ -1,0 +1,38 @@
+import math as math
+import matplotlib.pyplot as plt
+import numpy as np
+hi=float(input("initial height: "));
+v= float(input("initial velocity: "));
+ang=float(input("Angle w/ respect to x-axis: "));
+xa=float(input("x-axis acceleration: "));
+ya=float(input("y-axis acceleration: "));
+#----error------
+if ya == 0:
+    print(ya, 'm/s^2, no free fall')
+
+#----time----
+
+
+t=np.arange(1,99,1)
+
+#-----x components------
+x=((v*math.cos(ang))*t)+(1/2)*xa*t**2
+
+#----y components-------
+y=((v*math.sin(ang))*t)+(1/2)*ya*t**2
+
+
+#---- plotting-------
+#max height
+maxh = (((v**2)*(math.sin(ang))**2)/(2*ya))
+
+#max range
+xmax = ((v**2)*(math.sin(2*ya)))/ya
+
+
+#graph
+plt.plot(x,y)
+plt.xlim=[0,xmax] 
+plt.ylim=[hi,maxh]
+plt.xlabel('Range (meters)')
+plt.ylabel('Height (meters)')
