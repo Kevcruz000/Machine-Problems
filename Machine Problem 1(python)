@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+#n<9          (n**2)-7
+#n>=10          n-10  
+def fxn():
+    n=list(range(0,99))
+    f=[]
+    for a in n: 
+        if a<9: #8-
+            eq=(n**2)-7
+            f.append(eq)
+        elif a==9: #9
+            f.append(0)
+        elif a>=10: #10+ 
+            eq2=n-10
+            f.append(eq2)
+    plt.stem(n,f)
+    plt.xlabel('x')
+    plt.ylabel('y')
